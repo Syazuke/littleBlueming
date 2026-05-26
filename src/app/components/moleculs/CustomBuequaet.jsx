@@ -124,9 +124,9 @@ export function CustomBouquet() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={handleWhatsApp}
-                className="group flex items-center justify-center gap-3 px-8 py-5 bg-linear-to-r from-sky-500 to-blue-500 text-white rounded-full hover:shadow-2xl hover:shadow-blue-500/30 transition-all relative overflow-hidden"
+                className="group flex items-center justify-center gap-3 px-8 py-5 bg-linear-to-r from-sky-500 to-secondary text-white rounded-full hover:shadow-2xl hover:shadow-blue-500/30 transition-all relative overflow-hidden"
               >
-                <div className="absolute inset-0 bg-linear-to-r from-sky-400 to-blue-400 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="absolute inset-0 bg-linear-to-r from-sky-400 to-secondary opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <MessageCircle className="w-5 h-5 relative z-10 group-hover:rotate-12 transition-transform" />
                 <span className="relative z-10 font-medium">
                   Hubungi via WhatsApp

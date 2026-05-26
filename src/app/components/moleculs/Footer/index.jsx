@@ -79,7 +79,7 @@ export function Footer() {
                 const Icon = item.icon;
                 return (
                   <div key={idx} className="flex items-center gap-3 group">
-                    <div className="p-2 bg-linear-to-br from-blue-400 to-blue-600 rounded-lg group-hover:scale-110 transition-transform">
+                    <div className="p-2 bg-linear-to-br from-blue-400 to-secondary rounded-lg group-hover:scale-110 transition-transform">
                       <Icon className="w-4 h-4 text-white" />
                     </div>
                     <p>{item.content}</p>

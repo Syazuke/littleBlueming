@@ -45,7 +45,7 @@ export function InstagramHighlights() {
               style={{ transformStyle: "preserve-3d", perspective: 1000 }}
               className="relative shrink-0 w-48 h-72 rounded-3xl overflow-hidden shadow-2xl cursor-pointer snap-center group"
             >
-              <div className="absolute inset-0 bg-linear-to-br from-white-500 via-sky-500 to-blue-500 p-1 rounded-3xl">
+              <div className="absolute inset-0 bg-linear-to-br from-white-500 via-sky-500 to-secondary p-1 rounded-3xl">
                 <div className="relative w-full h-full bg-white rounded-3xl overflow-hidden">
                   <Image
                     src={item.image}
@@ -77,7 +77,7 @@ export function InstagramHighlights() {
                 </div>
               </div>
 
-              <div className="absolute -inset-1 bg-linear-to-br from-white-500 via-sky-500 to-blue-500 rounded-3xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity -z-10"></div>
+              <div className="absolute -inset-1 bg-linear-to-br from-white-500 via-sky-500 to-secondary rounded-3xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity -z-10"></div>
             </motion.div>
           ))}
         </div>
@@ -95,7 +95,7 @@ export function InstagramHighlights() {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05, y: -3 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-linear-to-r from-sky-600 to-blue-600 text-white rounded-full shadow-2xl hover:shadow-blue-500/50"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-white rounded-full shadow-2xl hover:shadow-blue-500/50"
           >
             <FaInstagram className="w-5 h-5" />
             <span className="font-semibold">Follow di Instagram</span>

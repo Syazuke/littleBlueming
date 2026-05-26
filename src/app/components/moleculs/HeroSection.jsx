@@ -46,12 +46,10 @@ export function HeroSection() {
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index} className="relative w-full h-full">
-            {/* BACKGROUND GAMBAR */}
             <div
               className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${slide.image})` }} // Pastikan di data 'slides' ada property 'image'
+              style={{ backgroundImage: `url(${slide.image})` }}
             >
-              {/* Overlay gelap agar teks terbaca */}
               <div className="absolute inset-0 bg-linear-to-br from-blue-900/60 to-black/40" />
             </div>
 
@@ -98,7 +96,7 @@ export function HeroSection() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={handleOpenWa}
-                    className="group relative px-8 md:px-10 py-4 bg-white text-secondary rounded-full shadow-xl hover:shadow-rose-500/40 transition-all flex items-center gap-2 overflow-hidden"
+                    className="group relative px-8 md:px-10 py-4 bg-white text-secondary rounded-full shadow-xl hover:shadow-secondary/40 transition-all flex items-center gap-2 overflow-hidden"
                   >
                     <span className="relative z-10 font-bold">
                       Pesan Sekarang

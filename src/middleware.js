@@ -1,9 +1,9 @@
-export { default } from "next-auth/middleware";
+import withAuth from "next-auth/middleware";
+
+// Mengekspor fungsi secara eksplisit agar Next.js 16 tidak error
+export default withAuth;
 
 export const config = {
-  // Masukkan semua rute yang ingin kamu kunci di sini
-  matcher: [
-    "/dashboard/:path*", // Mengunci halaman dashboard dan semua sub-halamannya
-    // "/admin/:path*",  <-- kamu bisa tambah rute lain di sini nanti jika ada
-  ],
+  // Masukkan halaman admin Little Blueming yang ingin dikunci
+  matcher: ["/product/:path*", "/upload/:path*", "/dashboard/:path*"],
 };
