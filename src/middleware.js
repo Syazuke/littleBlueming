@@ -5,5 +5,5 @@ export default withAuth;
 
 export const config = {
   // Masukkan halaman admin Little Blueming yang ingin dikunci
-  matcher: ["/product/:path*", "/upload/:path*", "/dashboard/:path*"],
+  matcher: ["/upload/:path*", "/dashboard/:path*"],
 };
