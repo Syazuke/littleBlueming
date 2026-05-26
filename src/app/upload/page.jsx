@@ -27,7 +27,7 @@ export default function AddProductPage() {
   if (status === "loading" || !session) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-rose-50/30">
-        <Loader2 className="w-10 h-10 animate-spin text-rose-500" />
+        <Loader2 className="w-10 h-10 animate-spin text-secondary" />
       </div>
     );
   }
@@ -76,12 +76,12 @@ export default function AddProductPage() {
         {/* Tombol Kembali */}
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-gray-500 hover:text-rose-500 transition-colors mb-6 font-medium"
+          className="inline-flex items-center gap-2 text-gray-500 hover:text-secondary transition-colors mb-6 font-medium"
         >
           <ArrowLeft className="w-5 h-5" /> Kembali ke Katalog
         </Link>
 
-        <div className="bg-white rounded-3xl shadow-xl p-8 border border-rose-100">
+        <div className="bg-white rounded-3xl shadow-xl p-8 border border-sky-100">
           <h1 className="text-3xl font-bold text-gray-800 mb-8 font-serif">
             Tambah Buket Baru
           </h1>
@@ -136,9 +136,9 @@ export default function AddProductPage() {
                 Foto Buket
               </label>
               <div className="flex items-center justify-center w-full">
-                <label className="flex flex-col items-center justify-center w-full h-40 border-2 border-rose-200 border-dashed rounded-2xl cursor-pointer bg-rose-50/50 hover:bg-rose-50 transition-colors">
+                <label className="flex flex-col items-center justify-center w-full h-40 border-2 border-blue-200 border-dashed rounded-2xl cursor-pointer bg-rose-50/50 hover:bg-blue-50 transition-colors">
                   <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                    <UploadCloud className="w-10 h-10 text-rose-400 mb-3" />
+                    <UploadCloud className="w-10 h-10 text-secondary mb-3" />
                     <p className="text-sm text-gray-600 font-medium">
                       Klik untuk mencari foto di perangkat
                     </p>
@@ -157,7 +157,7 @@ export default function AddProductPage() {
               </div>
 
               {preview && (
-                <div className="mt-4 relative w-32 h-40 rounded-xl overflow-hidden border-2 border-rose-100 shadow-md">
+                <div className="mt-4 relative w-32 h-40 rounded-xl overflow-hidden border-2 border-sky-100 shadow-md">
                   <img
                     src={preview}
                     alt="Preview"
@@ -172,7 +172,7 @@ export default function AddProductPage() {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full py-4 px-6 bg-rose-500 hover:bg-rose-600 text-white text-lg font-semibold rounded-xl disabled:opacity-70 transition-all shadow-lg shadow-rose-200 flex justify-center items-center"
+              className="w-full py-4 px-6 bg-secondary hover:bg-secondary text-white text-lg font-semibold rounded-xl disabled:opacity-70 transition-all shadow-lg shadow-blue-200 flex justify-center items-center"
             >
               {isLoading ? (
                 <Loader2 className="w-6 h-6 animate-spin" />
