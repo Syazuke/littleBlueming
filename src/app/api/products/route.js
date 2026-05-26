@@ -50,7 +50,7 @@ export async function POST(request) {
     const buffer = Buffer.from(bytes);
 
     const uploadResult = await new Promise((resolve, reject) => {
-      const uploadStream = cloudinary.upload_stream(
+      const uploadStream = cloudinary.uploader.upload_stream(
         {
           folder: "littleblueming_products",
         },
