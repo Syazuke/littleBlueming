@@ -12,22 +12,18 @@ export const authOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        // 1. Validasi input form kosong
         if (!credentials?.email || !credentials?.password) {
           throw new Error("Email dan password wajib diisi");
         }
 
-        // 2. Cari admin di database
         const user = await prisma.user.findUnique({
           where: { email: credentials.email },
         });
 
-        // Jika admin tidak ditemukan
         if (!user) {
           throw new Error("Email tidak terdaftar");
         }
 
-        // 3. Cocokkan password yang diketik dengan yang di database
         const isPasswordMatch = await bcrypt.compare(
           credentials.password,
           user.password,
@@ -37,7 +33,6 @@ export const authOptions = {
           throw new Error("Password salah");
         }
 
-        // 4. Jika sukses, kembalikan data untuk disimpan di sesi
         return {
           id: user.id,
           name: user.name,
@@ -50,7 +45,7 @@ export const authOptions = {
     strategy: "jwt",
   },
   pages: {
-    signIn: "/login", // Mengarahkan NextAuth ke desain form login Little Blueming kamu
+    signIn: "/login",
   },
   callbacks: {
     async jwt({ token, user }) {
