@@ -34,7 +34,7 @@ const features = [
 
 export function CustomBouquet() {
   const handleWhatsApp = () => {
-    const phoneNumber = "6281234567890";
+    const phoneNumber = "+6285188083810";
     const message = "Halo, saya ingin memesan buket custom";
     window.open(
       `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`,

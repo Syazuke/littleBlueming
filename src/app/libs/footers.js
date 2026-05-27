@@ -3,7 +3,7 @@ import { FaInstagram } from "react-icons/fa";
 
 export const contactInfo = [
   { icon: MapPin, content: ["Singaparna, leuwisari, kp citerewes"] },
-  { icon: Phone, content: ["+62 812-3456-7890"] },
+  { icon: Phone, content: ["+62 851-8808-3810"] },
   { icon: Clock, content: ["Every days: 09.00 - 17.00"] },
 ];
 
@@ -30,7 +30,7 @@ export const socialMedia = [
   },
   {
     icon: MessageCircle,
-    href: "https://wa.me/6281234567890",
+    href: "https://wa.me/+6285188083810",
     color: "hover:bg-green-500",
   },
 ];
