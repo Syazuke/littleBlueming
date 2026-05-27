@@ -25,7 +25,7 @@ export const quickLinks = [
 export const socialMedia = [
   {
     icon: FaInstagram,
-    href: "https://instagram.com",
+    href: "https://www.instagram.com/little_blueming/",
     color: "hover:bg-pink-500",
   },
   {
