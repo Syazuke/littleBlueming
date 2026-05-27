@@ -4,7 +4,6 @@ import { Navbar } from "./components/moleculs/Navbar";
 import { Footer } from "./components/moleculs/Footer";
 import { FloatingActions } from "./components/moleculs/FloatingActions";
 
-// 1. Import AuthProvider yang sudah kamu buat
 import AuthProvider from "./components/moleculs/AuthProvider";
 
 const geistSans = Geist({
@@ -17,7 +16,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// Bonus: Menyesuaikan judul website Little Blueming kamu
 export const metadata = {
   title: "Little Blueming",
   description: "The Perfect Gift",
@@ -30,7 +28,6 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col">
-        {/* 2. Bungkus semua komponen UI dengan AuthProvider */}
         <AuthProvider>
           <Navbar />
           {children}

@@ -116,7 +116,7 @@ export function ProductGrid() {
               <Swiper
                 modules={[Autoplay, Pagination, Navigation]}
                 spaceBetween={24}
-                slidesPerView={3}
+                slidesPerView={2}
                 autoplay={{
                   delay: 3500,
                   disableOnInteraction: false,
