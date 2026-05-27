@@ -64,17 +64,19 @@ const ProductCard = ({ item, isAdmin, handleEditClick }) => {
         ></div>
       </div>
 
-      <div className="p-4 flex flex-col grow justify-between">
-        <div>
-          <h3 className="text-gray-800 font-semibold mb-1 group-hover/card:text-secondary transition-colors">
+      <div className="p-4 flex flex-col grow justify-between gap-4">
+        <div className="flex flex-col gap-2">
+          <h3 className="text-gray-800 font-semibold font-sans text-xl group-hover/card:text-secondary transition-colors">
             {item.name}
           </h3>
-          <p className="text-secondary font-medium text-sm">{formattedPrice}</p>
+          <p className="text-gray-800 font-sans opacity-80 group-hover/card:text-secondary font-medium text-md">
+            {formattedPrice}
+          </p>
         </div>
 
         <button
           onClick={handleWa}
-          className="bg-blue-400 text-white rounded-xl font-medium px-4 py-2.5 w-full hover:bg-secondary transition-colors shadow-md shadow-sky-200"
+          className="bg-blue-400 text-white rounded-xl font-medium px-4 py-2.5 w-full group-hover/card:bg-secondary transition-colors shadow-md shadow-sky-200"
         >
           Lanjut ke WA
         </button>

@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import prisma from "@/app/libs/prisma";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import { v2 as cloudinary, UploadStream } from "cloudinary";
+import { v2 as cloudinary } from "cloudinary";
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,

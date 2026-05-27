@@ -71,16 +71,14 @@ export default function AddProductPage() {
   };
 
   return (
-    <div className="min-h-screen bg-rose-50/30 py-12 px-4 sm:px-6">
+    <div className="min-h-screen bg-rose-50/30 py-20 px-4 sm:px-6">
+      <Link
+        href="/product"
+        className="inline-flex items-center gap-2 text-gray-500 hover:text-secondary transition-colors mb-6 font-medium py-6"
+      >
+        <ArrowLeft className="w-5 h-5" /> Kembali ke Product
+      </Link>
       <div className="max-w-2xl mx-auto">
-        {/* Tombol Kembali */}
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 text-gray-500 hover:text-secondary transition-colors mb-6 font-medium"
-        >
-          <ArrowLeft className="w-5 h-5" /> Kembali ke Katalog
-        </Link>
-
         <div className="bg-white rounded-3xl shadow-xl p-8 border border-sky-100">
           <h1 className="text-3xl font-bold text-gray-800 mb-8 font-serif">
             Tambah Buket Baru
@@ -136,14 +134,14 @@ export default function AddProductPage() {
                 Foto Buket
               </label>
               <div className="flex items-center justify-center w-full">
-                <label className="flex flex-col items-center justify-center w-full h-40 border-2 border-blue-200 border-dashed rounded-2xl cursor-pointer bg-rose-50/50 hover:bg-blue-50 transition-colors">
+                <label className="flex flex-col items-center justify-center w-full h-40 border-2 border-blue-200 border-dashed rounded-2xl cursor-pointer bg-blue-50/50 hover:bg-blue-50 transition-colors">
                   <div className="flex flex-col items-center justify-center pt-5 pb-6">
                     <UploadCloud className="w-10 h-10 text-secondary mb-3" />
                     <p className="text-sm text-gray-600 font-medium">
                       Klik untuk mencari foto di perangkat
                     </p>
                     <p className="text-xs text-gray-400 mt-1">
-                      PNG, JPG, atau JPEG
+                      PNG, WEBP, JPG, atau JPEG
                     </p>
                   </div>
                   <input

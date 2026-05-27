@@ -138,9 +138,9 @@ export default function ProductGrid() {
               viewport={{ once: true }}
               className="w-full relative group"
             >
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-y-5 gap-x-1.5">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-y-5 gap-x-1.5">
                 {filteredProducts.map((item) => (
-                  <div key={item.id} className="h-auto">
+                  <div key={item.id} className="h-fit">
                     <ProductCard
                       item={item}
                       isAdmin={isAdmin}

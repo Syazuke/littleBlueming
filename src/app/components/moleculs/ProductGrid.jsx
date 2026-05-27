@@ -116,7 +116,7 @@ export function ProductGrid() {
               <Swiper
                 modules={[Autoplay, Pagination, Navigation]}
                 spaceBetween={24}
-                slidesPerView={1}
+                slidesPerView={3}
                 autoplay={{
                   delay: 3500,
                   disableOnInteraction: false,
@@ -133,11 +133,12 @@ export function ProductGrid() {
                   640: { slidesPerView: 2 },
                   768: { slidesPerView: 3 },
                   1024: { slidesPerView: 4 },
+                  1280: { slidesPerView: 5 },
                 }}
-                className="pb-16 px-2 pt-4"
+                className=""
               >
                 {products.slice(0, 6).map((item) => (
-                  <SwiperSlide key={item.id} className="h-auto">
+                  <SwiperSlide key={item.id} className="h-fit">
                     <ProductCard item={item} />
                   </SwiperSlide>
                 ))}
