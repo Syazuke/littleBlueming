@@ -20,15 +20,32 @@ import ProductCard from "../atoms/ProductCard";
 export function ProductGrid() {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [hasError, setHasError] = useState(false); // Tambahan state error
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const res = await fetch("/api/products");
+
+        // 1. Cek apakah respons dari server OK (status 200-299)
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+
         const data = await res.json();
-        setProducts(data);
+
+        // 2. Cek apakah data yang diterima benar-benar Array
+        if (Array.isArray(data)) {
+          setProducts(data);
+        } else {
+          console.error("Format data tidak valid, diharapkan array:", data);
+          setProducts([]); // Fallback ke array kosong
+          setHasError(true);
+        }
       } catch (error) {
         console.error("Gagal memuat produk:", error);
+        setProducts([]); // Pastikan state tetap array kosong jika gagal
+        setHasError(true);
       } finally {
         setIsLoading(false);
       }
@@ -77,7 +94,9 @@ export function ProductGrid() {
                 orang tersayang.
               </p>
             </motion.div>
-            {!isLoading && products.length > 0 && (
+
+            {/* 3. Gunakan Array.isArray lagi di sini untuk proteksi ganda */}
+            {!isLoading && Array.isArray(products) && products.length > 0 && (
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -103,6 +122,15 @@ export function ProductGrid() {
               <Loader2 className="w-10 h-10 text-secondary animate-spin mb-4" />
               <p className="text-gray-500 font-medium">
                 Memuat katalog buket cantikmu...
+              </p>
+            </div>
+          ) : hasError ? (
+            <div className="flex flex-col items-center justify-center py-20 w-full text-center">
+              <p className="text-red-500 font-medium mb-2">
+                Yah, gagal memuat produk.
+              </p>
+              <p className="text-gray-500 text-sm">
+                Cobalah muat ulang halaman ini.
               </p>
             </div>
           ) : (
@@ -137,11 +165,13 @@ export function ProductGrid() {
                 }}
                 className=""
               >
-                {products.slice(0, 6).map((item) => (
-                  <SwiperSlide key={item.id} className="h-fit">
-                    <ProductCard item={item} />
-                  </SwiperSlide>
-                ))}
+                {/* 4. Mencegah mapping jika products bukan array */}
+                {Array.isArray(products) &&
+                  products.slice(0, 6).map((item) => (
+                    <SwiperSlide key={item.id} className="h-fit">
+                      <ProductCard item={item} />
+                    </SwiperSlide>
+                  ))}
               </Swiper>
 
               <button className="custom-prev-btn absolute -left-4 top-[40%] -translate-y-1/2 z-10 p-3 lg:p-4 bg-white/90 backdrop-blur-sm rounded-full hover:bg-white transition-all shadow-md hover:shadow-xl opacity-0 group-hover:opacity-100 disabled:opacity-0">

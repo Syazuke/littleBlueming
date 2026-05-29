@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import prisma from "@/app/libs/prisma";
 import { getServerSession } from "next-auth/next";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/app/libs/authOptions";
 import { v2 as cloudinary } from "cloudinary";
 
 cloudinary.config({
@@ -19,6 +19,7 @@ export async function GET() {
     });
     return NextResponse.json(products);
   } catch (error) {
+    console.error("Error detail di api product", error);
     return NextResponse.json(
       { error: "Gagal mengambil data dari database", detail: error.message },
       { status: 500 },
