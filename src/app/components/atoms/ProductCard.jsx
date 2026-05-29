@@ -66,7 +66,7 @@ const ProductCard = ({ item, isAdmin, handleEditClick }) => {
 
       <div className="p-4 flex flex-col grow justify-between gap-4">
         <div className="flex flex-col gap-2">
-          <h3 className="text-gray-800 font-semibold font-sans text-xl group-hover/card:text-secondary transition-colors">
+          <h3 className="text-gray-800 truncate font-semibold font-sans text-xl group-hover/card:text-secondary transition-colors">
             {item.name}
           </h3>
           <p className="text-gray-800 font-sans opacity-80 group-hover/card:text-secondary font-medium text-md">
