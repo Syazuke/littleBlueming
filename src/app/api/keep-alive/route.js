@@ -1,8 +1,9 @@
+import prisma from "@/app/libs/prisma";
 import { NextResponse } from "next/server";
 
 export async function GET() {
   try {
-    await db.$queryRaw`Select 1`;
+    await prisma.$queryRaw`Select 1`;
     return NextResponse.json(
       {
         sucess: true,
