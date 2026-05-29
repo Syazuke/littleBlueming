@@ -54,6 +54,7 @@ const ProductCard = ({ item, isAdmin, handleEditClick }) => {
           alt={item.name || "Gambar Buket Little Blueming"}
           width={400}
           height={500}
+          priority
           className="w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-500"
         />
 
